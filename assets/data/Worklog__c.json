@@ -1,0 +1,23 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Worklog__c",
+                "referenceId": "Worklog__cRef1"
+            },
+            "Date__c": "2019-06-04",
+            "Summary__c": "dfgdf",
+            "Log_Detail__c": "dfgfd"
+        },
+        {
+            "attributes": {
+                "type": "Worklog__c",
+                "referenceId": "Worklog__cRef2"
+            },
+            "Type__c": "Daily Note",
+            "Date__c": "2019-06-04",
+            "Summary__c": "Test Log",
+            "Log_Detail__c": "This is first worklog"
+        }
+    ]
+}

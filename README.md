@@ -21,6 +21,7 @@ _Disabling secure and persistent browser caching has a significant negative perf
 _retrieve sample data from org_
 
 > sfdx force:user:permset:assign --permsetname Worklog_App_Permission
+
 > sfdx force:user:permset:assign -n Worklog_App_Permission -u xxxOrg
 
 _assign permissionset_
@@ -45,7 +46,7 @@ _create package version_
 
 _create scratch org_
 
-> sfdx force:package:install --wait 10 --publishwait 10 --package "Worklog App@1.0.0-1" -k test1234 --noprompt
+> sfdx force:package:install --wait 10 --publishwait 10 --package "Worklog App@1.0.0-2" -k test1234 --noprompt
 
 _install package version to scratch, make sure are in right org_
 

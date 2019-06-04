@@ -4,8 +4,8 @@
             "path": "force-app",
             "default": true,
             "package": "Worklog App",
-            "versionName": "beta 1.0",
-            "versionNumber": "1.0.0.NEXT"
+            "versionName": "beta 1.1",
+            "versionNumber": "1.1.0.NEXT"
         }
     ],
     "namespace": "",
@@ -13,6 +13,8 @@
     "sourceApiVersion": "45.0",
     "packageAliases": {
         "Worklog App": "0Ho2v000000CaUuCAK",
-        "Worklog App@1.0.0-1": "04t2v0000010MuMAAU"
+        "Worklog App@1.0.0-1": "04t2v0000010MuMAAU",
+        "Worklog App@1.0.0-2": "04t2v0000010NyVAAU",
+        "Worklog App@1.1.0-1": "04t2v0000010OuTAAU"
     }
 }

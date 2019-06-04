@@ -1,16 +1,12 @@
 <template>
-    <lightning-card  variant="Narrow"  title="Daily Worklog" icon-name="custom:custom83">
-        <p class="slds-p-horizontal_small">Card Body Narrow (custom component)</p>
-
-
+    <lightning-card variant="Narrow" title="Daily Worklog" icon-name="custom:custom83">
+        <!-- <p class="slds-p-horizontal_small">Card Body Narrow (custom component)</p> -->
 
         <lightning-record-form
             object-api-name={objectApiName}
             fields={fields}
             onsuccess={handleSuccess}>
         </lightning-record-form>
-
-
 
     <!--
 
@@ -36,6 +32,6 @@
 
     -->
 
-        <p slot="footer">Card Footer</p>
+        <!-- <p slot="footer">Card Footer</p> -->
     </lightning-card>
 </template>

@@ -1,3 +1,41 @@
 <template>
-    <p>test</p>
+    <lightning-card  variant="Narrow"  title="Daily Worklog" icon-name="custom:custom83">
+        <p class="slds-p-horizontal_small">Card Body Narrow (custom component)</p>
+
+
+
+        <lightning-record-form
+            object-api-name={objectApiName}
+            fields={fields}
+            onsuccess={handleSuccess}>
+        </lightning-record-form>
+
+
+
+    <!--
+
+        <div>
+            <lightning-input type="date" name="inputDate" label="Required date field" required value="" ></lightning-input>
+        </div>
+
+        <div class="row">
+            <lightning-textarea name="inputDetail" 
+                                required 
+                                value=""
+                                label="Worklog Detail" 
+                                placeholder="type here..."
+                                message-when-too-long="A maximum of 32768 characters are allowed."
+                                message-when-value-missing="An empty detail cannot be saved.">
+                            </lightning-textarea>
+        </div>
+
+        <div class="slds-m-top_medium slds-m-bottom_x-large">
+            <lightning-button variant="brand" label="Save" title="Save action" icon-name="utility:save" icon-position="right" class="slds-m-left_x-small"></lightning-button>
+            <lightning-button variant="destructive" label="Clear" title="Clear action" icon-name="utility:clear" icon-position="right" class="slds-m-left_x-small"></lightning-button>
+        </div>
+
+    -->
+
+        <p slot="footer">Card Footer</p>
+    </lightning-card>
 </template>

@@ -1,0 +1,38 @@
+<template>
+    <lightning-card title="Recent Worklog" icon-name="standard:action_list_component">
+ 
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered">
+            <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Date">Date</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Type">Type</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Summary">Summary</div>
+                    </th>
+                    <th class="" scope="col">
+                        <div class="slds-truncate" title="Number">Number</div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <template if:true={result}>
+                    <template for:each={result} for:item="object">
+                        <tr class="slds-hint-parent" key={object.id}>
+                            <td data-label="Date">{object.fields.Date__c.value}</td>
+                            <td data-label="Type"> {object.fields.Type__c.value}</td>
+                            <td data-label="Summary"> {object.fields.Summary__c.value}</td>
+                            <td data-label="Number"> {object.fields.Name.value}</td>
+                        </tr>
+                    </template>
+                </template>
+                <template if:true={error}>
+                    List View contains no data
+                </template>
+            </tbody>
+        </table>
+    </lightning-card>
+</template>

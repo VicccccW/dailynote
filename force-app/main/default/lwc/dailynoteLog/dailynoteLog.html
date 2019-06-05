@@ -2,11 +2,13 @@
     <lightning-card variant="Narrow" title="Daily Worklog" icon-name="custom:custom83">
         <!-- <p class="slds-p-horizontal_small">Card Body Narrow (custom component)</p> -->
 
-        <lightning-record-form
-            object-api-name={objectApiName}
-            fields={fields}
-            onsuccess={handleSuccess}>
-        </lightning-record-form>
+        <div class="slds-m-around_medium">
+            <lightning-record-form
+                object-api-name={objectApiName}
+                fields={fields}
+                onsuccess={handleSuccess}>
+            </lightning-record-form>
+        </div>
 
     <!--
 

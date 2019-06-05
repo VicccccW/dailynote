@@ -5,6 +5,9 @@
         "paths": {
             "c/dailynoteLog": [
                 "dailynoteLog/dailynoteLog.js"
+            ],
+            "c/dailynoteLogRecentListView": [
+                "dailynoteLogRecentListView/dailynoteLogRecentListView.js"
             ]
         }
     },

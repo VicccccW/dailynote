@@ -3,11 +3,14 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c/dailynoteLog": [
-                "dailynoteLog/dailynoteLog.js"
+            "c/worklogForm": [
+                "worklogForm/worklogForm.js"
             ],
-            "c/dailynoteLogRecentListView": [
-                "dailynoteLogRecentListView/dailynoteLogRecentListView.js"
+            "c/worklogRecentListView": [
+                "worklogRecentListView/worklogRecentListView.js"
+            ],
+            "c/pubsub": [
+                "pubsub/pubsub.js"
             ]
         }
     },

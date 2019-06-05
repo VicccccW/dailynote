@@ -42,7 +42,7 @@ _create a package in the Devhub, not the scratch org_
 
 _create package version_
 
-> sfdx force:org:create -s -f config/project-scratch-def.json -a dailynoteDeploy
+> sfdx force:org:create -s -f config/project-scratch-def.json -a worklogDeploy
 
 _create scratch org_
 

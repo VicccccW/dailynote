@@ -4,8 +4,8 @@
             "path": "force-app",
             "default": true,
             "package": "Worklog App",
-            "versionName": "beta 1.1",
-            "versionNumber": "1.1.0.NEXT"
+            "versionName": "beta 1.2",
+            "versionNumber": "1.2.0.NEXT"
         }
     ],
     "namespace": "",
@@ -15,6 +15,9 @@
         "Worklog App": "0Ho2v000000CaUuCAK",
         "Worklog App@1.0.0-1": "04t2v0000010MuMAAU",
         "Worklog App@1.0.0-2": "04t2v0000010NyVAAU",
-        "Worklog App@1.1.0-1": "04t2v0000010OuTAAU"
+        "Worklog App@1.1.0-1": "04t2v0000010OuTAAU",
+        "Worklog App@1.2.0-1": "04t2v0000010dGdAAI",
+        "Worklog App@1.2.0-2": "04t2v0000010dP8AAI",
+        "Worklog App@1.2.0-3": "04t2v0000010dPDAAY"
     }
 }

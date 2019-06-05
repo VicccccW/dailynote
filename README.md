@@ -50,6 +50,6 @@ _create scratch org_
 
 _install package version to scratch, make sure are in right org_
 
-> sfdx force:package:install -u xxxOrg --wait 10 --publishwait 10 --package "Worklog App@1.0.0-1" -k test1234 --noprompt
+> sfdx force:package:install -u xxxOrg --wait 10 --publishwait 10 --package "Worklog App@1.2.0-1" -k test1234 --noprompt
 
 _install package version to a specfic org_

@@ -3,29 +3,29 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
-            "c/worklogForm": [
-                "worklogForm/worklogForm.js"
-            ],
-            "c/worklogRecentListView": [
-                "worklogRecentListView/worklogRecentListView.js"
+            "c/idsUtils": [
+                "idsUtils/idsUtils.js"
             ],
             "c/pubsub": [
                 "pubsub/pubsub.js"
             ],
-            "c/worklogSearchBar": [
-                "worklogSearchBar/worklogSearchBar.js"
+            "c/worklogDetails": [
+                "worklogDetails/worklogDetails.js"
+            ],
+            "c/worklogForm": [
+                "worklogForm/worklogForm.js"
             ],
             "c/worklogList": [
                 "worklogList/worklogList.js"
             ],
-            "c/worklogDetails": [
-                "worklogDetails/worklogDetails.js"
-            ],
             "c/worklogListItemBubbling": [
                 "worklogListItemBubbling/worklogListItemBubbling.js"
             ],
-            "c/idsUtils": [
-                "idsUtils/idsUtils.js"
+            "c/worklogRecentListView": [
+                "worklogRecentListView/worklogRecentListView.js"
+            ],
+            "c/worklogSearchBar": [
+                "worklogSearchBar/worklogSearchBar.js"
             ]
         }
     },

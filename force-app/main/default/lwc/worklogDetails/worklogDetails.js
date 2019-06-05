@@ -55,6 +55,8 @@ export default class WorklogDetails extends LightningElement {
         }
     }
 
+    //register worklogSelected event, send from worklogList cmp
+    //use handleWorklogSelected to process the received id
     connectedCallback() {
         registerListener('worklogSelected', this.handleWorklogSelected, this);
     }
@@ -63,6 +65,7 @@ export default class WorklogDetails extends LightningElement {
         unregisterAllListeners(this);
     }
 
+    //get the passed id
     handleWorklogSelected(worklogId) {
         this.recordId = worklogId;
     }

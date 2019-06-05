@@ -9,8 +9,11 @@ import { CurrentPageReference } from 'lightning/navigation';
 import { fireEvent } from 'c/pubsub';
 
 export default class WorklogSearchBar extends LightningElement {
+
+    //wire the current page refence using wire adapter
     @wire(CurrentPageReference) pageRef;
 
+    //'searchKeyChange' is the event name
     handleKeyChange(event) {
         fireEvent(this.pageRef, 'searchKeyChange', event.target.value);
     }

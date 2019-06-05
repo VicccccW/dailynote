@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Worklog List" icon-name="custom:custom30">
+        <div class="slds-m-around_medium" onworklogselect={handleWorklogSelect}>
+            <template for:each={worklogs.data} for:item="worklog">
+                <c-worklog-list-item-bubbling
+                    key={worklog.Id}
+                    worklog={worklog}
+                ></c-worklog-list-item-bubbling>
+            </template>
+        </div>
+    </lightning-card>
+</template>

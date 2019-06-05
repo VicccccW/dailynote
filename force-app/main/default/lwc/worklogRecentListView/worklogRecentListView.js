@@ -1,5 +1,5 @@
 import { LightningElement, wire, track } from 'lwc';
-import { getListUi} from 'lightning/uiListApi';
+import { getListUi } from 'lightning/uiListApi';
 import WORKLOG_OBJECT from '@salesforce/schema/Worklog__c';
 
 export default class DailynoteLogRecentListView extends LightningElement {

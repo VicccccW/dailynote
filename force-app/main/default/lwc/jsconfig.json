@@ -11,6 +11,21 @@
             ],
             "c/pubsub": [
                 "pubsub/pubsub.js"
+            ],
+            "c/worklogSearchBar": [
+                "worklogSearchBar/worklogSearchBar.js"
+            ],
+            "c/worklogList": [
+                "worklogList/worklogList.js"
+            ],
+            "c/worklogDetails": [
+                "worklogDetails/worklogDetails.js"
+            ],
+            "c/worklogListItemBubbling": [
+                "worklogListItemBubbling/worklogListItemBubbling.js"
+            ],
+            "c/idsUtils": [
+                "idsUtils/idsUtils.js"
             ]
         }
     },

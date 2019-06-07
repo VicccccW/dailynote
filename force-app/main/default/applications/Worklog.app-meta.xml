@@ -19,6 +19,7 @@
     </profileActionOverrides>
     <tabs>standard-home</tabs>
     <tabs>Worklog__c</tabs>
+    <tabs>Worklog_Draggable_Page</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Worklog_UtilityBar</utilityBar>
 </CustomApplication>

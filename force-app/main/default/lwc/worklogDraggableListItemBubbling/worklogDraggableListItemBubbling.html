@@ -1,0 +1,16 @@
+<template>
+    <div draggable="true" class="slds-box slds-p-around_medium" ondragstart={itemDragStart}>
+            <a href="#">
+                <lightning-layout vertical-align="center">
+                    <lightning-layout-item padding="around-small">
+                        <p>Number: {worklog.Name}</p>
+                        <!-- <p>test</p> -->
+                    </lightning-layout-item>
+                </lightning-layout>
+            </a>
+            <p>Type: {worklog.Type__c}</p>
+            <p>Date: {worklog.Date__c}</p>
+            <p>Summary: {worklog.Summary__c}</p>
+            <p>Index: {worklog.Drag_Table_Index__c}</p>
+    </div>
+</template>

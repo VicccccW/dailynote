@@ -9,6 +9,11 @@
         <field>Worklog__c.Log_Detail__c</field>
         <readable>true</readable>
     </fieldPermissions>
+    <fieldPermissions>
+        <editable>true</editable>
+        <field>Worklog__c.Order_Number__c</field>
+        <readable>true</readable>
+    </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>
     <label>Worklog App Permission</label>
     <objectPermissions>

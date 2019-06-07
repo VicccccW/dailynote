@@ -12,6 +12,11 @@
     <custom>false</custom>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Worklog__c.Drag_Table_Index__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Worklog__c.Log_Detail__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -27,6 +32,10 @@
         <object>Worklog__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <tabVisibilities>
+        <tab>Worklog_Draggable_Page</tab>
+        <visibility>DefaultOn</visibility>
+    </tabVisibilities>
     <tabVisibilities>
         <tab>Worklog__c</tab>
         <visibility>Hidden</visibility>

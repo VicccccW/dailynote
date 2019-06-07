@@ -9,11 +9,20 @@
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <componentInstances>
+            <componentName>worklogSearchBar</componentName>
+        </componentInstances>
+        <componentInstances>
+            <componentName>worklogList</componentName>
+        </componentInstances>
         <mode>Replace</mode>
         <name>bottomLeft</name>
         <type>Region</type>
     </flexiPageRegions>
     <flexiPageRegions>
+        <componentInstances>
+            <componentName>worklogDetails</componentName>
+        </componentInstances>
         <mode>Replace</mode>
         <name>bottomRight</name>
         <type>Region</type>

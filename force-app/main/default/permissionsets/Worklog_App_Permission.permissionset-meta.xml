@@ -11,7 +11,7 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
-        <field>Worklog__c.Order_Number__c</field>
+        <field>Worklog__c.Drag_Table_Index__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <hasActivationRequired>false</hasActivationRequired>

@@ -7,17 +7,42 @@
             },
             "Date__c": "2019-06-04",
             "Summary__c": "dfgdf",
-            "Log_Detail__c": "dfgfd"
+            "Log_Detail__c": "dfgfd",
+            "Type__c": "Daily Note",
+            "Drag_Table_Index__c": "1"
         },
         {
             "attributes": {
                 "type": "Worklog__c",
                 "referenceId": "Worklog__cRef2"
             },
+            "Date__c": "2019-06-05",
+            "Summary__c": "dfgdf",
+            "Log_Detail__c": "dfgfd",
             "Type__c": "Daily Note",
-            "Date__c": "2019-06-04",
-            "Summary__c": "Test Log",
-            "Log_Detail__c": "This is first worklog"
+            "Drag_Table_Index__c": "2"
+        },
+        {
+            "attributes": {
+                "type": "Worklog__c",
+                "referenceId": "Worklog__cRef3"
+            },
+            "Date__c": "2019-06-06",
+            "Summary__c": "dfgdf",
+            "Log_Detail__c": "dfgfd",
+            "Type__c": "Daily Note",
+            "Drag_Table_Index__c": "3"
+        },
+        {
+            "attributes": {
+                "type": "Worklog__c",
+                "referenceId": "Worklog__cRef4"
+            },
+            "Date__c": "2019-06-07",
+            "Summary__c": "dfgdf",
+            "Log_Detail__c": "dfgfd",
+            "Type__c": "Daily Note",
+            "Drag_Table_Index__c": "4"
         }
     ]
 }

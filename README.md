@@ -29,8 +29,8 @@ _assign permissionset_
 > sfdx force:data:tree:import -f assets/data/Worklog__c.json
 
 _import sample data to org_
-sfdx force:org:open -p lightning/page/home
-> 
+
+> sfdx force:org:open -p lightning/page/home
 
 _open the app directly_
 

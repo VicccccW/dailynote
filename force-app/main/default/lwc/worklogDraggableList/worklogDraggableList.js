@@ -35,7 +35,7 @@ export default class WorklogDraggableList extends LightningElement {
 
     handleDragOver(event) {
         event.preventDefault();
-        event.dataTransfer.dropEffect = 'move';
+        //event.dataTransfer.dropEffect = 'move';
     }
 
 }

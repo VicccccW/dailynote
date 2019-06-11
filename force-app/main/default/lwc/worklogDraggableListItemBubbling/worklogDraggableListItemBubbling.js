@@ -6,10 +6,9 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
 
     itemDragStart() {
         const event = new CustomEvent('itemdrag', {
-            detail: this.worklog.Drag_Table_Index__c
+            detail: this.worklog
         });
-        console.log("dragged");
+
         this.dispatchEvent(event);
-        console.log("dragged");
     }
 }

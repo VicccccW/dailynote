@@ -45,10 +45,10 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
             evt.stopPropagation(); // Stops some browsers from redirecting.
         } 
 
-        if(evt.currentTarget !== this.template) {
+
+        if(evt.currentTarget.target !== this.template) {
             console.log("in not equal");
-            console.log(evt.currentTarget);
-            console.log(this.template);
+            
             // this.parentNode.removeChild(event.worklog);
             // let dropHTML = event.dataTransfer.getData('text/plain');
             // this.insertAdjacentText('beforebegin', dropHTML);

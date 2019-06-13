@@ -25,17 +25,22 @@ export default class WorklogDraggableList extends LightningElement {
         }
     }
 
-    handleItemDrag(event) {
-
-        this.dragSourceElement = event.target;
-
-        event.dataTransfer.effectAllowed = 'move';
-        
+    handleItemDragStart(event) {
+        console.log("on partent start");
+        console.log(event);
+        console.log(event.detail);
     }
 
-    handleDragOver(event) {
-        event.preventDefault();
-        //event.dataTransfer.dropEffect = 'move';
+    handleItemDragOver(event) {
+        console.log("on partent over");
+        console.log(event);
+        console.log(event.detail);
+    }
+
+    handleItemDrop(event) {
+        console.log("on partent drop");
+        console.log(event);
+        console.log(event.detail);
     }
 
 }

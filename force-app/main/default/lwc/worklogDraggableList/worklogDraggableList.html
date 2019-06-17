@@ -1,12 +1,9 @@
 <template>
     <lightning-card title="Worklog Draggable List" icon-name="custom:custom30">
-        <!-- <div class="slds-m-around_medium" ondrop={dropHandler} ondragover={dragOverHandler}> -->
         <div class="slds-m-around_medium" 
-            onitemdragstart={handleItemDragStart}
-            onitemdragover={handleItemDragOver}
             onitemdrop={handleItemDrop}>
             <lightning-layout multiple-rows>
-                    <template if:true={worklogs.data} for:each={worklogs.data} for:item="worklog">
+                    <template if:true={worklogs} for:each={worklogs} for:item="worklog">
                         <lightning-layout-item size="12" padding="around-small" key={worklog.Id}>
                             <c-worklog-draggable-list-item-bubbling
                                 worklog={worklog}

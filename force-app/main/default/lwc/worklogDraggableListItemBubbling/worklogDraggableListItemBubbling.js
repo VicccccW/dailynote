@@ -15,32 +15,58 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
     }
 
     handleDragStart(evt) {
-        console.log("start drag");
         evt.dataTransfer.setData('worklog', JSON.stringify(this.worklog));
+
+        // const event = new CustomEvent('itemdragstart', {
+        //     bubbles: true,
+        //     detail: this.worklog.Id
+        //     // detail: {
+        //     //     Id: this.worklog.Id,
+        //     //     Index: this.worklog.Drag_Table_Index__c
+        //     // }
+
+        // });
+
+        console.log("1 being dragged is ");
+        // console.log(event.detail.Id);
+        // console.log(event.detail.Index);
+
+        //this.dispatchEvent(event);
     }
 
+    
     handleDragOver(evt) {
-        evt.preventDefault();
-        console.log("over drag");
+        if(evt.preventDefault) {
+            evt.preventDefault();
+        }
     }
 
     handleDrop(evt) {
         evt.preventDefault();
-        console.log("in drop");
 
         const dropItem = JSON.parse(evt.dataTransfer.getData('worklog'));
-        
-        console.log("in drop2");
-        const event = new CustomEvent('itemdrop', {
-            detail: dropItem.Id
-        });
 
-        console.log("in drop3");
-        console.log(event);
-        console.log(event.detail);
+        if(this.worklog.Id !== dropItem.Id) {
+            const event = new CustomEvent('itemdrop', {
+                bubbles: true,
+                //detail: this.dropItem.Id
+                detail: {
+                    Id: dropItem.Id,
+                    // Name: this.dropItem.Name,
+                    // Type: this.dropItem.Type__c,
+                    // Date: this.dropItem.Date__c,
+                    // Summary: this.dropItem.Summary__c,
+                    Index: this.worklog.Drag_Table_Index__c
+                }
+            });
 
-
-        this.dispatchEvent(event);
+             
+            // console.log(dropItem.Id);
+                    
+            // console.log("droping target id ");
+            // console.log(this.worklog.Id);
+            
+            this.dispatchEvent(event);
+        }
     }
-
 }

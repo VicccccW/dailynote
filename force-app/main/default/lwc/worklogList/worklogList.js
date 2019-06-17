@@ -18,7 +18,7 @@ export default class WorklogList extends LightningElement {
     @wire(findWorklogs, { searchKey: '$searchKey' })
     worklogs;
 
-    //listen to the events ('searcKeyChange') using the life cycle callback
+    //listen to the events ('searchKeyChange') using the life cycle callback
     //use this.handleSearchKeyChange as a handler to handle the event received
     //the event pass a string as a parameter, so handleSearchKeyChange takes this parameter
     connectedCallback() {

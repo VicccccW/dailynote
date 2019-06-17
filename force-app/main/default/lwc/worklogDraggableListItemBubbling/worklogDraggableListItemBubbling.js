@@ -52,11 +52,12 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
                 //detail: this.dropItem.Id
                 detail: {
                     Id: dropItem.Id,
-                    // Name: this.dropItem.Name,
-                    // Type: this.dropItem.Type__c,
-                    // Date: this.dropItem.Date__c,
-                    // Summary: this.dropItem.Summary__c,
-                    Index: this.worklog.Drag_Table_Index__c
+                    Name: dropItem.Name,
+                    Type: dropItem.Type__c,
+                    Date: dropItem.Date__c,
+                    Summary: dropItem.Summary__c,
+                    oldIndex: dropItem.Drag_Table_Index__c,
+                    newIndex: this.worklog.Drag_Table_Index__c
                 }
             });
 

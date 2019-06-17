@@ -35,10 +35,18 @@ export default class WorklogDraggableList extends LightningElement {
         //remove indexed old element and get a returned new array 
 
         //insert new element/ moved element into the new array with newIndex
-        //console.log(this.worklogs[event.detail.Index-1]);
+        //console.log(this.worklogs[event.detail.Index]);
 
-        
+        const moveditem = this.worklogs.find((element, index) => index === event.detail.oldIndex);
 
+        const remainingItems = this.worklogs.filter((element, index) => index !== event.detail.oldIndex);
 
+        const reorderedItems = [
+            ...remainingItems.slice(0, event.detail.newIndex),
+            moveditem,
+            ...remainingItems.slice(event.detail.newIndex)
+        ];
+
+        this.worklogs = reorderedItems;
     }
 }

@@ -12,6 +12,12 @@
             "c/worklogDetails": [
                 "worklogDetails/worklogDetails.js"
             ],
+            "c/worklogDraggableList": [
+                "worklogDraggableList/worklogDraggableList.js"
+            ],
+            "c/worklogDraggableListItemBubbling": [
+                "worklogDraggableListItemBubbling/worklogDraggableListItemBubbling.js"
+            ],
             "c/worklogForm": [
                 "worklogForm/worklogForm.js"
             ],
@@ -26,12 +32,6 @@
             ],
             "c/worklogSearchBar": [
                 "worklogSearchBar/worklogSearchBar.js"
-            ],
-            "c/worklogDraggableList": [
-                "worklogDraggableList/worklogDraggableList.js"
-            ],
-            "c/worklogDraggableListItemBubbling": [
-                "worklogDraggableListItemBubbling/worklogDraggableListItemBubbling.js"
             ]
         }
     },

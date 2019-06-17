@@ -2,76 +2,45 @@
 import { LightningElement, api } from 'lwc';
 
 export default class WorklogDraggableListItemBubbling extends LightningElement {
-    @api worklog;
+     
+    _worklog;
+
+    @api
+    get worklog() {
+        return this._worklog;
+    }
+
+    set worklog(value) {
+        this._worklog = value;
+    }
 
     handleDragStart(evt) {
-       // console.log("in drag start");
-        evt.dataTransfer.effectAllowed = 'move';
-        // let dragBox = this.getElementsByTagName('div');
-        // let XMLS = new XMLSerializer();
-        // let dropBox_xmls = XMLS.serializeToString(dragBox);
-
-        // event.dataTransfer.setData('text/plain' , dropBox_xmls);
-        // console.log(event.target);
-        // event.dataTransfer.setData('text/plain', event.target);
-
-        const event = new CustomEvent('itemdragstart', {
-            detail: this.worklog.Id
-        });
-
-        this.dispatchEvent(event);
-        
+        console.log("start drag");
+        evt.dataTransfer.setData('worklog', JSON.stringify(this.worklog));
     }
 
     handleDragOver(evt) {
-        //console.log("in drag over");
-        evt.preventDefault(); 
-    
-        evt.dataTransfer.dropEffect = 'move'; 
-
-        const event = new CustomEvent('itemdragover', {
-            detail: this.worklog.Id
-        });
-
-        this.dispatchEvent(event);
-
+        evt.preventDefault();
+        console.log("over drag");
     }
 
     handleDrop(evt) {
-        //console.log("in drop");
-        // this/e.target is current target element.
-      
-        if (evt.stopPropagation) {
-            evt.stopPropagation(); // Stops some browsers from redirecting.
-        } 
+        evt.preventDefault();
+        console.log("in drop");
 
-
-        if(evt.currentTarget.target !== this.template) {
-            console.log("in not equal");
-            
-            // this.parentNode.removeChild(event.worklog);
-            // let dropHTML = event.dataTransfer.getData('text/plain');
-            // this.insertAdjacentText('beforebegin', dropHTML);
-        }
-
+        const dropItem = JSON.parse(evt.dataTransfer.getData('worklog'));
+        
+        console.log("in drop2");
         const event = new CustomEvent('itemdrop', {
-            detail: this.worklog.Id
+            detail: dropItem.Id
         });
 
+        console.log("in drop3");
+        console.log(event);
+        console.log(event.detail);
+
+
         this.dispatchEvent(event);
+    }
 
-
-        // // Don't do anything if dropping the same column we're dragging.
-
-        //   // Set the source column's HTML to the HTML of the column we dropped on.
-        //   //alert(this.outerHTML);
-        //   //dragSrcEl.innerHTML = this.innerHTML;
-        //   //this.innerHTML = e.dataTransfer.getData('text/html');
-        //   this.parentNode.removeChild(dragSrcEl);
-        //   var dropHTML = e.dataTransfer.getData('text/html');
-        //   this.insertAdjacentHTML('beforebegin',dropHTML);
-        //   var dropElem = this.previousSibling;
-        //   addDnDHandlers(dropElem);
-
-      }
 }

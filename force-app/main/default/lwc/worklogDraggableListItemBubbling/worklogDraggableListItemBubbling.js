@@ -16,25 +16,8 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
 
     handleDragStart(evt) {
         evt.dataTransfer.setData('worklog', JSON.stringify(this.worklog));
-
-        // const event = new CustomEvent('itemdragstart', {
-        //     bubbles: true,
-        //     detail: this.worklog.Id
-        //     // detail: {
-        //     //     Id: this.worklog.Id,
-        //     //     Index: this.worklog.Drag_Table_Index__c
-        //     // }
-
-        // });
-
-        console.log("1 being dragged is ");
-        // console.log(event.detail.Id);
-        // console.log(event.detail.Index);
-
-        //this.dispatchEvent(event);
     }
 
-    
     handleDragOver(evt) {
         if(evt.preventDefault) {
             evt.preventDefault();
@@ -61,7 +44,6 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
                 }
             });
 
-             
             // console.log(dropItem.Id);
                     
             // console.log("droping target id ");

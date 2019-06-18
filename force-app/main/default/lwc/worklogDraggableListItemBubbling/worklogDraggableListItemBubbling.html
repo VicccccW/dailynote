@@ -4,11 +4,18 @@
             ondragover={handleDragOver}
             ondragenter={handleDragEnter}
             ondrop={handleDrop}>
-            <p>Id: {worklog.Id}</p>
-            <!-- <p>Number: {worklog.Name}</p>
+            <!-- <p>Id: {worklog.Id}</p> -->
+            <!-- <p>Number:</p> -->
+            <a href="#" onclick={handleSelect}>
+                <lightning-layout vertical-align="center">
+                    <lightning-layout-item padding="around-small">
+                        <p>{worklog.Name}</p>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </a>
             <p>Type: {worklog.Type__c}</p>
             <p>Date: {worklog.Date__c}</p>
-            <p>Summary: {worklog.Summary__c}</p> -->
-            <p>Index: {worklog.Drag_Table_Index__c}</p>
+            <p>Summary: {worklog.Summary__c}</p>
+            <!-- <p>Index: {worklog.Drag_Table_Index__c}</p> -->
     </div>
 </template>

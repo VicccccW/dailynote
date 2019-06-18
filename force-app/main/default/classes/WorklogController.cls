@@ -16,8 +16,8 @@ public with sharing class WorklogController {
 
     @AuraEnabled(cacheable=true)
     public static List<Worklog__c> getAllWorklogs() {
-        //return [SELECT Id, Name, Date__c, Type__c, Summary__c, Log_Detail__c, Drag_Table_Index__c FROM Worklog__c ORDER BY Drag_Table_Index__c ASC];
-        return [SELECT Id, Name, Drag_Table_Index__c FROM Worklog__c ORDER BY Drag_Table_Index__c ASC];
+        return [SELECT Id, Name, Date__c, Type__c, Summary__c, Log_Detail__c, Drag_Table_Index__c FROM Worklog__c ORDER BY Drag_Table_Index__c ASC];
+        //return [SELECT Id, Name, Drag_Table_Index__c FROM Worklog__c ORDER BY Drag_Table_Index__c ASC];
     }
 
 }

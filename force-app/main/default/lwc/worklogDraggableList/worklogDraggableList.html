@@ -1,7 +1,14 @@
 <template>
     <lightning-card title="Worklog Draggable List" icon-name="custom:custom30">
+        <div>
+            update new list button goes here 
+        </div>
+        <div>
+            revert list order button goes here 
+        </div>
         <div class="slds-m-around_medium" 
-            onitemdrop={handleItemDrop}>
+            onitemdrop={handleItemDrop}
+            onselect={handleSelect}>
             <lightning-layout multiple-rows>
                     <template if:true={worklogs} for:each={worklogs} for:item="worklog">
                         <lightning-layout-item size="12" padding="around-small" key={worklog.Id}>

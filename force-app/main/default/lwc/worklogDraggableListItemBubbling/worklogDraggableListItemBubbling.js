@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { LightningElement, api, track } from 'lwc';
+import { LightningElement, api } from 'lwc';
 
 export default class WorklogDraggableListItemBubbling extends LightningElement {
     
@@ -59,14 +59,17 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
                 }
             });
 
-            // console.log(dropItem.Id);
-                    
-            //  console.log("in child drop");
-            //  console.log(event.detail.oldIndex);
-            //  console.log(event.detail.newIndex);
-            //console.log("event");
-           // console.log(event.detail.oldIndex);
             this.dispatchEvent(event);
         }
+    }
+
+    handleSelect(evt) {
+        evt.preventDefault();
+
+        const event = new CustomEvent('select', {
+            bubbles: true
+        });
+
+        this.dispatchEvent(event);
     }
 }

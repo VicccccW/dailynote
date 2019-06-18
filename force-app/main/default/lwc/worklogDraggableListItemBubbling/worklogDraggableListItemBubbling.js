@@ -1,27 +1,42 @@
 /* eslint-disable no-console */
-import { LightningElement, api } from 'lwc';
+import { LightningElement, api, track } from 'lwc';
 
 export default class WorklogDraggableListItemBubbling extends LightningElement {
-     
-    _worklog;
+    
+    //@track originWorklog;
 
-    @api
-    get worklog() {
-        return this._worklog;
-    }
+    @api worklog;
 
-    set worklog(value) {
-        this._worklog = value;
-    }
+    // @api
+    // get worklog() {
+    //     return this._worklog;
+    // }
+
+    // set worklog(value) {
+    //     this._worklog = value;
+    // }
 
     handleDragStart(evt) {
+        evt.dataTransfer.effectAllowed = 'move';
         evt.dataTransfer.setData('worklog', JSON.stringify(this.worklog));
+        //this.classList.add('dragElem');
     }
 
     handleDragOver(evt) {
         if(evt.preventDefault) {
             evt.preventDefault();
         }
+
+        evt.dataTransfer.effectAllowed = 'move';
+    }
+
+    handleDragEnter(evt) {
+        if(evt.preventDefault) {
+            evt.preventDefault();
+        }
+
+        //this.classList.add('over');
+
     }
 
     handleDrop(evt) {
@@ -34,11 +49,11 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
                 bubbles: true,
                 //detail: this.dropItem.Id
                 detail: {
-                    Id: dropItem.Id,
-                    Name: dropItem.Name,
-                    Type: dropItem.Type__c,
-                    Date: dropItem.Date__c,
-                    Summary: dropItem.Summary__c,
+                    // Id: dropItem.Id,
+                    // Name: dropItem.Name,
+                    // Type: dropItem.Type__c,
+                    // Date: dropItem.Date__c,
+                    // Summary: dropItem.Summary__c,
                     oldIndex: dropItem.Drag_Table_Index__c,
                     newIndex: this.worklog.Drag_Table_Index__c
                 }
@@ -46,9 +61,11 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
 
             // console.log(dropItem.Id);
                     
-            // console.log("droping target id ");
-            // console.log(this.worklog.Id);
-            
+            //  console.log("in child drop");
+            //  console.log(event.detail.oldIndex);
+            //  console.log(event.detail.newIndex);
+            //console.log("event");
+           // console.log(event.detail.oldIndex);
             this.dispatchEvent(event);
         }
     }

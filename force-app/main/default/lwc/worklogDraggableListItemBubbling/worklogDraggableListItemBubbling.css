@@ -1,3 +1,8 @@
-div.dragElem {
-    opacity: 0.4;
+.dragElem {
+    opacity: 0.1;
+}
+
+.over {
+    background: blue;
+    border-style: dashed;
 }

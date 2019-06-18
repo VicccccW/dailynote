@@ -2,12 +2,13 @@
     <div draggable="true" class="slds-box slds-p-around_medium" 
             ondragstart={handleDragStart}
             ondragover={handleDragOver}
+            ondragenter={handleDragEnter}
             ondrop={handleDrop}>
             <p>Id: {worklog.Id}</p>
-            <p>Number: {worklog.Name}</p>
+            <!-- <p>Number: {worklog.Name}</p>
             <p>Type: {worklog.Type__c}</p>
             <p>Date: {worklog.Date__c}</p>
-            <p>Summary: {worklog.Summary__c}</p>
+            <p>Summary: {worklog.Summary__c}</p> -->
             <p>Index: {worklog.Drag_Table_Index__c}</p>
     </div>
 </template>

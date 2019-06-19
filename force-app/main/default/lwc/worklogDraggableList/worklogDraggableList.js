@@ -24,13 +24,10 @@ export default class WorklogDraggableList extends LightningElement {
         } else if (error) {
             this.worklogs = undefined;
             this.error = error;
-            //console.log(error);
         }
     }
 
     handleItemDrop(event) {
-    
-        console.log("on drop");
 
         const movedItem = this.worklogs.find((element, index) => index === event.detail.oldIndex);
 
@@ -58,7 +55,6 @@ export default class WorklogDraggableList extends LightningElement {
     }
 
     handleSelect(event) {
-        console.log(event.target.worklog.Id);
         fireEvent(this.pageRef, 'worklogSelected', event.target.worklog.Id);
     }
 }

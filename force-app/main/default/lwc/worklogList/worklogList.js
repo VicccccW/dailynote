@@ -5,25 +5,46 @@
  * For child-to-parent communication, fire a DOM event in the child component
  * For parent-to-child communication, use property passing or call a public @api method defined in the child component
  */
-import { LightningElement, wire } from 'lwc';
+import { LightningElement, wire, track } from 'lwc';
 import { CurrentPageReference } from 'lightning/navigation';
 import findWorklogs from '@salesforce/apex/WorklogController.findWorklogs';
 import { registerListener, unregisterAllListeners, fireEvent } from 'c/pubsub';
+
+
 
 export default class WorklogList extends LightningElement {
     searchKey;
 
     @wire(CurrentPageReference) pageRef;
 
-    @wire(findWorklogs, { searchKey: '$searchKey' })
-    worklogs;
+    @track worklogs = [];
+    @track error;
 
+    //The component’s JavaScript prefaces the value of the searchKey parameter with $ 
+    //to indicate that it’s dynamic and reactive. 
+    //It references a property of the component instance. 
+    //If its value changes, the template rerenders.
+    @wire(findWorklogs, { searchKey: '$searchKey' })
+    wiredWorklogs( { error, data } ) {
+        if(data) {
+            this.worklogs = data;
+            this.error = undefined;
+        } else if (error) {
+            this.worklogs = undefined;
+            this.error = error;
+        }
+    }
+    
     //listen to the events ('searchKeyChange') using the life cycle callback
     //use this.handleSearchKeyChange as a handler to handle the event received
     //the event pass a string as a parameter, so handleSearchKeyChange takes this parameter
     connectedCallback() {
+
+        this.handleSearchKeyChange('');
+
         // subscribe to searchKeyChange event
         registerListener('searchKeyChange', this.handleSearchKeyChange, this);
+        
     }
 
     disconnectedCallback() {
@@ -35,8 +56,7 @@ export default class WorklogList extends LightningElement {
     //it will then trigger the @wire(findWorklogs) and passin the parameter.
     //the returned data is a worklogs promise
     //consume the promise in html
-    handleSearchKeyChange(searchKey) {
-        console.log("received key is " + searchKey);
+    handleSearchKeyChange(searchKey) {        
         this.searchKey = searchKey;
     }
 

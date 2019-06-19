@@ -1,12 +1,14 @@
 <template>
-    <a href="#" onclick={handleSelect}>
-        <lightning-layout vertical-align="center">
-            <lightning-layout-item padding="around-small">
-                <p>{worklog.Name}</p>
-            </lightning-layout-item>
-        </lightning-layout>
-    </a>
-    <p>{worklog.Type__c}</p>
-    <p>{worklog.Date__c}</p>
-    <p>{worklog.Summary__c}</p>
+    <div class="slds-box slds-p-around_medium" >
+        <a href="#" onclick={handleSelect}>
+            <lightning-layout vertical-align="center">
+                <lightning-layout-item padding="around-small">
+                    <p>{worklog.Name}</p>
+                </lightning-layout-item>
+            </lightning-layout>
+        </a>
+        <p>Type: {worklog.Type__c}</p>
+        <p>Data: {worklog.Date__c}</p>
+        <p>Summary: {worklog.Summary__c}</p>
+    </div>
 </template>

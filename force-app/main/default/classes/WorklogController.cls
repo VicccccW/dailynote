@@ -8,7 +8,8 @@ public with sharing class WorklogController {
     @AuraEnabled(cacheable=true)
     public static List<Worklog__c> findWorklogs(String searchKey) {
         if (String.isBlank(searchKey)) {
-            return new List<Worklog__c>();
+            //return new List<Worklog__c>();
+            return [SELECT Id, Name, Date__c, Type__c, Summary__c, Log_Detail__c FROM Worklog__c LIMIT 10];
         }
         String key = '%' + searchKey + '%';
         return [SELECT Id, Name, Date__c, Type__c, Summary__c, Log_Detail__c FROM Worklog__c WHERE Summary__c LIKE :key  LIMIT 10];

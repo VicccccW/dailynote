@@ -32,6 +32,9 @@
             ],
             "c/worklogSearchBar": [
                 "worklogSearchBar/worklogSearchBar.js"
+            ],
+            "c/placeholder": [
+                "placeholder/placeholder.js"
             ]
         }
     },

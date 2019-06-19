@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /**
  * The pubsub communication approach is used to provide a communication mechanism between sibling components assembled in a flexipage (App Builder) where traditional parent/child communication patterns are not available.
  * Do NOT use this utility for parent/child communication. Use the guidelines below instead.
@@ -17,5 +18,9 @@ export default class WorklogSearchBar extends LightningElement {
     handleKeyChange(event) {
         fireEvent(this.pageRef, 'searchKeyChange', event.target.value);
     }
+
+    // handleKeyChange(event) {
+    //     console.log("test");
+    // }
 }
 //https://rajvakati.com/2019/01/31/lightning-web-components-events/

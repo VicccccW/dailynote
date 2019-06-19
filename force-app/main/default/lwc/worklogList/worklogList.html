@@ -1,12 +1,22 @@
 <template>
-    <lightning-card title="Worklog List" icon-name="custom:custom30">
+    <lightning-card title="Worklog List" icon-name="standard:drafts">
         <div class="slds-m-around_medium" onworklogselect={handleWorklogSelect}>
-            <template for:each={worklogs.data} for:item="worklog">
-                <c-worklog-list-item-bubbling
-                    key={worklog.Id}
-                    worklog={worklog}
-                ></c-worklog-list-item-bubbling>
-            </template>
+            <lightning-layout multiple-rows>
+                <template if:true={worklogs.length} for:each={worklogs} for:item="worklog">
+                    <lightning-layout-item size="4" padding="around-small" key={worklog.Id}>
+                        <c-worklog-list-item-bubbling
+                            worklog={worklog}
+                        ></c-worklog-list-item-bubbling>
+                    </lightning-layout-item> 
+                </template>
+                <template if:false={worklogs.length}>
+                    <lightning-layout-item size="12">
+                        <c-placeholder
+                        message="No record found"
+                        ></c-placeholder>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
         </div>
     </lightning-card>
 </template>

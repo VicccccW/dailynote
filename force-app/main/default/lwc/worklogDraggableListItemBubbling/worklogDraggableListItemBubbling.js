@@ -19,7 +19,7 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
     handleDragStart(evt) {
         evt.dataTransfer.effectAllowed = 'move';
         evt.dataTransfer.setData('worklog', JSON.stringify(this.worklog));
-        //this.classList.add('dragElem');
+        this.template.querySelector('div').classList.add('dragElem');
     }
 
     handleDragOver(evt) {
@@ -27,6 +27,7 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
             evt.preventDefault();
         }
 
+        this.template.querySelector('div').classList.add('over');
         evt.dataTransfer.effectAllowed = 'move';
     }
 
@@ -35,7 +36,7 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
             evt.preventDefault();
         }
 
-        //this.classList.add('over');
+        this.template.querySelector('div').classList.add('over');
 
     }
 

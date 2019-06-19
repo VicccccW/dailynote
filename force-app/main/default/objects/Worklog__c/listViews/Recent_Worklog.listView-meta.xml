@@ -5,6 +5,7 @@
     <columns>Type__c</columns>
     <columns>Summary__c</columns>
     <columns>NAME</columns>
+    <columns>Drag_Table_Index__c</columns>
     <filterScope>Everything</filterScope>
     <label>Recent Worklog</label>
 </ListView>

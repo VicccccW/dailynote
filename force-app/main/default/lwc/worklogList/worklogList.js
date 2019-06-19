@@ -10,8 +10,6 @@ import { CurrentPageReference } from 'lightning/navigation';
 import findWorklogs from '@salesforce/apex/WorklogController.findWorklogs';
 import { registerListener, unregisterAllListeners, fireEvent } from 'c/pubsub';
 
-
-
 export default class WorklogList extends LightningElement {
     searchKey;
 
@@ -44,6 +42,8 @@ export default class WorklogList extends LightningElement {
 
         // subscribe to searchKeyChange event
         registerListener('searchKeyChange', this.handleSearchKeyChange, this);
+
+        registerListener('recordFromSuccess', this.handleRecordFromSuccess, this);
         
     }
 
@@ -65,5 +65,16 @@ export default class WorklogList extends LightningElement {
     handleWorklogSelect(event) {
         // fire worklogSelected event
         fireEvent(this.pageRef, 'worklogSelected', event.target.worklog.Id);
+    }
+
+    handleRecordFromSuccess() {
+        console.log("test here");
+        findWorklogs()
+        .then(result => {
+            this.worklogs = result;
+        })
+        .catch(error => {
+            this.error = error;
+        });
     }
 }

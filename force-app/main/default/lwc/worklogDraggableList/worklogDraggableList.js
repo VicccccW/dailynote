@@ -57,4 +57,12 @@ export default class WorklogDraggableList extends LightningElement {
     handleSelect(event) {
         fireEvent(this.pageRef, 'worklogSelected', event.target.worklog.Id);
     }
+
+    handleRevert(event) {
+        this.worklogs = this._originalArr;
+    }
+
+    handleSave(event) {
+        console.log("in handle save");
+    }
 }

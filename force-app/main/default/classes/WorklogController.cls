@@ -21,4 +21,9 @@ public with sharing class WorklogController {
         //return [SELECT Id, Name, Drag_Table_Index__c FROM Worklog__c ORDER BY Drag_Table_Index__c ASC];
     }
 
+    @AuraEnabled(cacheable=true)
+    public static string saveWorklogs(List<>){
+        
+    }
+
 }

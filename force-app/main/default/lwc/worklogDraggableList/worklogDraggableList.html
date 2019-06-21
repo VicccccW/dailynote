@@ -1,11 +1,19 @@
 <template>
     <lightning-card title="Worklog Draggable List" icon-name="custom:custom30">
-        <div>
-            update new list button goes here 
-        </div>
-        <div>
-            revert list order button goes here 
-        </div>
+        <div class="slds-box slds-m-around_large">   
+            <lightning-layout>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <div class="slds-p-around_medium slds-text-align_center">
+                            <lightning-button variant="destructive" label="Revert" title="Revert action" onclick={handleRevert} class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                </lightning-layout-item>
+                <lightning-layout-item flexibility="auto" padding="around-small">
+                    <div class="slds-p-around_medium slds-text-align_center">
+                            <lightning-button variant="brand" label="Save" title="Save action" onclick={handleSave} class="slds-m-left_x-small"></lightning-button>
+                    </div>
+                </lightning-layout-item>
+            </lightning-layout>
+         </div>
         <div class="slds-m-around_medium" 
             onitemdrop={handleItemDrop}
             onselect={handleSelect}>

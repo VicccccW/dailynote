@@ -6,6 +6,9 @@
             "c/idsUtils": [
                 "idsUtils/idsUtils.js"
             ],
+            "c/placeholder": [
+                "placeholder/placeholder.js"
+            ],
             "c/pubsub": [
                 "pubsub/pubsub.js"
             ],
@@ -32,9 +35,6 @@
             ],
             "c/worklogSearchBar": [
                 "worklogSearchBar/worklogSearchBar.js"
-            ],
-            "c/placeholder": [
-                "placeholder/placeholder.js"
             ]
         }
     },

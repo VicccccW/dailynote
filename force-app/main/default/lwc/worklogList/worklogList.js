@@ -68,7 +68,6 @@ export default class WorklogList extends LightningElement {
     }
 
     handleRecordFromSuccess() {
-        console.log("test here");
         findWorklogs()
         .then(result => {
             this.worklogs = result;

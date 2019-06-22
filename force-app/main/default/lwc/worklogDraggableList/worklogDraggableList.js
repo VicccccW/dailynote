@@ -1,8 +1,11 @@
 /* eslint-disable no-console */
 import { LightningElement, wire, track} from 'lwc';
+import { refreshApex } from '@salesforce/apex';
 import getAllWorklogs from '@salesforce/apex/WorklogController.getAllWorklogs';
+import saveWorklogs from '@salesforce/apex/WorklogController.saveWorklogs';
 import { CurrentPageReference } from 'lightning/navigation';
 import { fireEvent } from 'c/pubsub';
+
 
 export default class WorklogDraggableList extends LightningElement {
     
@@ -62,7 +65,18 @@ export default class WorklogDraggableList extends LightningElement {
         this.worklogs = this._originalArr;
     }
 
-    handleSave(event) {
-        console.log("in handle save");
+    handleSave(event) {        
+        const savedWorklogsStr = JSON.stringify(this.worklogs);
+
+        saveWorklogs({ savedWorklogsStr : savedWorklogsStr })
+            .then(() => {
+                this._originalArr = this.worklogs;
+                //return refreshApex(this.wiredWorklogs);
+                //dispatch success message 
+            })
+            .catch(error => {
+                this.error = error;
+                //display error message
+            })
     }
 }

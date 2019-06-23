@@ -80,7 +80,6 @@ export default class WorklogDraggableList extends LightningElement {
             element.setAttribute("disabled", null);
         });
 
-
         this.worklogs = this._originalArr;
     }
 
@@ -90,7 +89,6 @@ export default class WorklogDraggableList extends LightningElement {
             element.setAttribute("disabled", null);
         });
         
-
         //save data to server
         const savedWorklogsStr = JSON.stringify(this.worklogs);
 

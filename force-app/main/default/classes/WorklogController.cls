@@ -60,12 +60,12 @@ public with sharing class WorklogController {
                         //System.debug(objTemp);
                         if(objTemp.Id != null) {
                             objVal.Id = objTemp.Id;
-                            
-                            if(objVal.Drag_Table_Index__c != null) {
+
+                            if(objTemp.Drag_Table_Index__c != null) {
                                 objVal.Drag_Table_Index__c = objTemp.Drag_Table_Index__c;
                             } 
                             
-                            if(objVal.Drag_Related_List_Index__c != null) {
+                            if(objTemp.Drag_Related_List_Index__c != null) {
                                 objVal.Drag_Related_List_Index__c = objTemp.Drag_Related_List_Index__c;
                             }
 
@@ -74,6 +74,7 @@ public with sharing class WorklogController {
                             // objVal.Type__c = objTemp.Type__c ;
                             // objVal.Summary__c = objTemp.Summary__c ;
                             // objVal.Log_Detail__c = objTemp.Log_Detail__c ;
+                            
                             worklogs.add(objVal);
                         }
                     }

@@ -1,8 +1,16 @@
-.dragElem {
+/* .dragElem {
     opacity: 0.1;
 }
 
 .over {
     background: blue;
     border-style: dashed;
+} */
+
+.hovered {
+    background: #f4f4f4;
+    outline-style: dashed;
+    outline-width: 3px;
+    outline-color: grey;
 }
+  

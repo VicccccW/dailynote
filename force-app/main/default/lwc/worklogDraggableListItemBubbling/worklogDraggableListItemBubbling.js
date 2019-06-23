@@ -17,31 +17,36 @@ export default class WorklogDraggableListItemBubbling extends LightningElement {
     // }
 
     handleDragStart(evt) {
+        
         evt.dataTransfer.effectAllowed = 'move';
         evt.dataTransfer.setData('worklog', JSON.stringify(this.worklog));
         //this.template.querySelector('div').classList.add('dragElem');
     }
 
-    handleDragOver(evt) {
-        if(evt.preventDefault) {
-            evt.preventDefault();
-        }
+    handleDragEnter(evt) {
+        evt.preventDefault();
 
         //this.template.querySelector('div').classList.add('over');
-        evt.dataTransfer.effectAllowed = 'move';
+        //this.template.querySelector('div').classList.add('hovered');
     }
 
-    handleDragEnter(evt) {
-        if(evt.preventDefault) {
-            evt.preventDefault();
-        }
+    handleDragOver(evt) {
+        evt.preventDefault();
 
         //this.template.querySelector('div').classList.add('over');
+        this.template.querySelector('div').classList.add('hovered');
+        evt.dataTransfer.effectAllowed = 'move';
+        
+    }
 
+    handleDragLeave(evt) {
+        this.template.querySelector('div').classList.remove('hovered');
     }
 
     handleDrop(evt) {
         evt.preventDefault();
+
+        this.template.querySelector('div').classList.remove('hovered');
 
         const dropItem = JSON.parse(evt.dataTransfer.getData('worklog'));
 

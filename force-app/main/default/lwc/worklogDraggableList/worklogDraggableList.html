@@ -41,7 +41,7 @@
                     <template if:true={worklogs} for:each={worklogs} for:item="worklog">
                         <lightning-layout-item size="12" padding="around-small" key={worklog.Id}>
                             <c-worklog-draggable-list-item-bubbling
-                                worklog={worklog} clss
+                                worklog={worklog} 
                             ></c-worklog-draggable-list-item-bubbling>
                         </lightning-layout-item> 
                     </template>

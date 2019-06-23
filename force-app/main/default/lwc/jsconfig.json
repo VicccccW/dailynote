@@ -41,6 +41,9 @@
             ],
             "c/worklogDraggableRelatedList": [
                 "worklogDraggableRelatedList/worklogDraggableRelatedList.js"
+            ],
+            "c/worklogDraggableDetailPage": [
+                "worklogDraggableDetailPage/worklogDraggableDetailPage.js"
             ]
         }
     },

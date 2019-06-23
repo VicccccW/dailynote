@@ -4,10 +4,14 @@
     </div>
     
     <script>
+        //var accountId = "{!$CurrentPage.parameters.id}";
+
         $Lightning.use("c:draggableListAuraAppWrapper", function() {
             $Lightning.createComponent(
                 "c:worklogDraggableRelatedList",
-                { greeting : "test"},
+                { prePageUrl : "/lightning/r/Account/{!$CurrentPage.parameters.id}/view",
+                  accountId : "{!$CurrentPage.parameters.id}"
+                },
                 "container",
             function(cmp) {
                 console.log('component created');

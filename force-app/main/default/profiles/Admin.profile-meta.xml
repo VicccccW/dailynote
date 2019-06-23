@@ -46,7 +46,11 @@
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
     <pageAccesses>
-        <apexPage>draggableListVFWrapper</apexPage>
+        <apexPage>worklogDraggableDetailButtonVFWrapper</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
+    <pageAccesses>
+        <apexPage>worklogDraggableListButtonVFWrapper</apexPage>
         <enabled>true</enabled>
     </pageAccesses>
     <tabVisibilities>

@@ -30,8 +30,8 @@ public with sharing class WorklogController {
                 , Log_Detail__c
                 , Drag_Related_List_Index__c 
                 FROM Worklog__c 
-                WHERE Account__c =: '0019D000003vrVdQAI' 
-                ORDER BY Drag_Table_Index__c 
+                WHERE Account__c =:accountId 
+                ORDER BY Drag_Related_List_Index__c 
                 ASC];
     }
 
@@ -60,7 +60,15 @@ public with sharing class WorklogController {
                         //System.debug(objTemp);
                         if(objTemp.Id != null) {
                             objVal.Id = objTemp.Id;
-                            objVal.Drag_Table_Index__c = objTemp.Drag_Table_Index__c;
+                            
+                            if(objVal.Drag_Table_Index__c != null) {
+                                objVal.Drag_Table_Index__c = objTemp.Drag_Table_Index__c;
+                            } 
+                            
+                            if(objVal.Drag_Related_List_Index__c != null) {
+                                objVal.Drag_Related_List_Index__c = objTemp.Drag_Related_List_Index__c;
+                            }
+
                             // objVal.Name = objTemp.Name ;
                             // objVal.Date__c = objTemp.Date__c ;
                             // objVal.Type__c = objTemp.Type__c ;

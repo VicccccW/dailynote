@@ -5,7 +5,7 @@ import saveWorklogs from '@salesforce/apex/WorklogController.saveWorklogs';
 import { reduceErrors } from 'c/idsUtils';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
-export default class WorklogDraggableRelatedList extends LightningElement {
+export default class WorklogDraggableDetailPage extends LightningElement {
     
     @track worklogs;
 
@@ -112,7 +112,7 @@ export default class WorklogDraggableRelatedList extends LightningElement {
             })
     }
 
-    handleBack(event) {
+    handleClose(event) {
         window.location = this.prePageUrl;
     }
 }

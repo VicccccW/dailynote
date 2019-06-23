@@ -17,6 +17,11 @@
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
+        <field>Worklog__c.Drag_Related_List_Index__c</field>
+        <readable>false</readable>
+    </fieldPermissions>
+    <fieldPermissions>
+        <editable>false</editable>
         <field>Worklog__c.Drag_Table_Index__c</field>
         <readable>false</readable>
     </fieldPermissions>
@@ -40,6 +45,10 @@
         <object>Worklog__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <pageAccesses>
+        <apexPage>draggableListVFWrapper</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <tabVisibilities>
         <tab>Worklog_Draggable_Page</tab>
         <visibility>DefaultOn</visibility>

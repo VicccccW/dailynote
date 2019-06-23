@@ -35,6 +35,12 @@
             ],
             "c/worklogSearchBar": [
                 "worklogSearchBar/worklogSearchBar.js"
+            ],
+            "c/demoLwcforLighntingout": [
+                "demoLwcforLighntingout/demoLwcforLighntingout.js"
+            ],
+            "c/worklogDraggableRelatedList": [
+                "worklogDraggableRelatedList/worklogDraggableRelatedList.js"
             ]
         }
     },

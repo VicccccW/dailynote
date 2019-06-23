@@ -21,6 +21,20 @@ public with sharing class WorklogController {
         //return [SELECT Id, Name, Drag_Table_Index__c FROM Worklog__c ORDER BY Drag_Table_Index__c ASC];
     }
 
+    @AuraEnabled(cacheable=true)
+    public static List<Worklog__c> getChildWorklogs(String accountId) {
+        return [SELECT Id
+                , Name, Date__c
+                , Type__c
+                , Summary__c
+                , Log_Detail__c
+                , Drag_Related_List_Index__c 
+                FROM Worklog__c 
+                WHERE Account__c =: '0019D000003vrVdQAI' 
+                ORDER BY Drag_Table_Index__c 
+                ASC];
+    }
+
     @AuraEnabled
     public static void saveWorklogs(String savedWorklogsStr){
         

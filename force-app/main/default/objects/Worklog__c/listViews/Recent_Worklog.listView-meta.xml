@@ -6,6 +6,8 @@
     <columns>Summary__c</columns>
     <columns>NAME</columns>
     <columns>Drag_Table_Index__c</columns>
+    <columns>Account__c</columns>
+    <columns>Drag_Related_List_Index__c</columns>
     <filterScope>Everything</filterScope>
     <label>Recent Worklog</label>
 </ListView>

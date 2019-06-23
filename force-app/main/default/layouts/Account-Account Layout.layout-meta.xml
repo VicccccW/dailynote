@@ -252,6 +252,7 @@
         <relatedList>RelatedPartnerList</relatedList>
     </relatedLists>
     <relatedLists>
+        <customButtons>Reorder_Items</customButtons>
         <fields>NAME</fields>
         <fields>Type__c</fields>
         <fields>Date__c</fields>

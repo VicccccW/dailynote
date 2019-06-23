@@ -1,0 +1,17 @@
+<apex:page standardController="Worklog__c" recordSetVar="worklogs">
+    <apex:includeLightning />
+    <div id="container">
+    </div>
+    
+    <script>
+        $Lightning.use("c:draggableListAuraAppWrapper", function() {
+            $Lightning.createComponent(
+                "c:worklogDraggableRelatedList",
+                { greeting : "test"},
+                "container",
+            function(cmp) {
+                console.log('component created');
+            });
+        });
+    </script>
+</apex:page>

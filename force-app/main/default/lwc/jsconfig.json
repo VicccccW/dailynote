@@ -44,6 +44,9 @@
             ],
             "c/worklogDraggableDetailPage": [
                 "worklogDraggableDetailPage/worklogDraggableDetailPage.js"
+            ],
+            "c/worklogDraggableModal": [
+                "worklogDraggableModal/worklogDraggableModal.js"
             ]
         }
     },

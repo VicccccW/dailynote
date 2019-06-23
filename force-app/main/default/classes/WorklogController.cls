@@ -42,6 +42,8 @@ public with sharing class WorklogController {
 
         worklogs = processWorklogs(savedWorklogsStr);
 
+        //System.debug(worklogs);
+
         update worklogs;
     }
 

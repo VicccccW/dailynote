@@ -4,12 +4,32 @@
             <lightning-layout>
                 <lightning-layout-item flexibility="auto" padding="around-small">
                     <div class="slds-p-around_medium slds-text-align_center">
-                            <lightning-button variant="destructive" label="Revert" title="Revert action" onclick={handleRevert} class="slds-m-left_x-small"></lightning-button>
+                            <!-- <lightning-button variant="destructive" 
+                                                   label="Revert" 
+                                                   title="Revert action" 
+                                                   onclick={handleRevert} 
+                                                   class="slds-m-left_x-small" 
+                                                   disabled></lightning-button> 
+                            -->
+                            <button class="slds-button slds-button_destructive" 
+                                    title="Revert action" 
+                                    onclick={handleRevert}
+                                    disabled>Revert</button>
                     </div>
                 </lightning-layout-item>
                 <lightning-layout-item flexibility="auto" padding="around-small">
                     <div class="slds-p-around_medium slds-text-align_center">
-                            <lightning-button variant="brand" label="Save" title="Save action" onclick={handleSave} class="slds-m-left_x-small"></lightning-button>
+                            <!-- <lightning-button variant="brand" 
+                                                   label="Save" 
+                                                   title="Save action" 
+                                                   onclick={handleSave} 
+                                                   class="slds-m-left_x-small" 
+                                                   disabled="false"></lightning-button> 
+                            -->
+                            <button class="slds-button slds-button_brand" 
+                                    title="Save action" 
+                                    onclick={handleSave}
+                                    disabled>Save</button>
                     </div>
                 </lightning-layout-item>
             </lightning-layout>

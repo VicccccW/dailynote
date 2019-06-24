@@ -50,6 +50,9 @@
             ],
             "c/worklogDraggableLtnOutPage": [
                 "worklogDraggableLtnOutPage/worklogDraggableLtnOutPage.js"
+            ],
+            "c/worklogDraggableModalPage": [
+                "worklogDraggableModalPage/worklogDraggableModalPage.js"
             ]
         }
     },

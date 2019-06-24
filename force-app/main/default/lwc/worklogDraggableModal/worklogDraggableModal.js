@@ -47,7 +47,9 @@ export default class WorklogDraggableModal extends LightningElement {
             }
         });
 
-        this.template.querySelector('c-worklog-draggable-modal-page').handleSave().then(() => this.closeModal());
+        this.template.querySelector('c-worklog-draggable-modal-page')
+        .handleSave()
+        .then(() => this.closeModal());
         
         // // eslint-disable-next-line @lwc/lwc/no-async-operation
         // setTimeout(() => {

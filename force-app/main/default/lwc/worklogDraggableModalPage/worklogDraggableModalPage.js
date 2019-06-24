@@ -92,7 +92,6 @@ export default class WorklogDraggableModalPage extends LightningElement {
                     })
                 );
                 
-
                 return refreshApex(this._wiredWorklogsResult);
             })
             .catch(error => {

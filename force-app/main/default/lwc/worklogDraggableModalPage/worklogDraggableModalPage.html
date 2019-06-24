@@ -2,7 +2,7 @@
     <lightning-card>
         <div class="slds-m-around_medium" 
             onitemdrop={handleItemDrop}
-            onselect={handleSelect}>
+            onselect={handleSelect}>   
             <lightning-layout multiple-rows>
                 <template if:true={worklogs} for:each={worklogs} for:item="worklog">
                     <lightning-layout-item size="12" padding="around-small" key={worklog.Id}>

@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { LightningElement, wire, track, api} from 'lwc';
 import { refreshApex } from '@salesforce/apex';
-import getAllWorklogs from '@salesforce/apex/WorklogController.getAllWorklogs';
+import getChildWorklogs from '@salesforce/apex/WorklogController.getChildWorklogs';
 import saveWorklogs from '@salesforce/apex/WorklogController.saveWorklogs';
 import { CurrentPageReference } from 'lightning/navigation';
 //import { fireEvent } from 'c/pubsub';
@@ -10,6 +10,8 @@ import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class WorklogDraggableModalPage extends LightningElement {
     
+    @api recordId;
+
     @track worklogs;
 
     @track error;
@@ -20,7 +22,7 @@ export default class WorklogDraggableModalPage extends LightningElement {
 
     _wiredWorklogsResult;
 
-    @wire(getAllWorklogs)
+    @wire(getChildWorklogs, { accountId : '$recordId'})
     wiredWorklogs(result) {
         this._wiredWorklogsResult = result;
 
@@ -37,20 +39,20 @@ export default class WorklogDraggableModalPage extends LightningElement {
 
     handleItemDrop(event) {
 
-        const movedItem = this.worklogs.find((element, index) => index === event.detail.oldIndex);
+        const movedItem = this.worklogs.find((element, index) => index === event.detail.oldRelatedListIndex);
 
-        const remainingItems = this.worklogs.filter((element, index) => index !== event.detail.oldIndex);
+        const remainingItems = this.worklogs.filter((element, index) => index !== event.detail.oldRelatedListIndex);
 
-        remainingItems.splice(event.detail.newIndex, 0, movedItem);
-        
+        remainingItems.splice(event.detail.newRelatedListIndex, 0, movedItem);
+ 
         //change index
         remainingItems.forEach((element, index) => {
-            element.Drag_Table_Index__c = index;
+            element.Drag_Related_List_Index__c = index;
         });
 
         //re-order new items based on new index
         remainingItems.sort((a, b) => {
-            return a.Drag_Table_Index__c - b.Drag_Table_Index__c;
+            return a.Drag_Related_List_Index__c - b.Drag_Related_List_Index__c;
         });
 
         //update worklogs property
@@ -61,7 +63,7 @@ export default class WorklogDraggableModalPage extends LightningElement {
             bubbles: true
         });
 
-        this.dispatchEvent(evt)
+        this.dispatchEvent(evt);
     }
 
     handleSelect(event) {
@@ -106,5 +108,9 @@ export default class WorklogDraggableModalPage extends LightningElement {
                     })
                 );
             })
+    }
+
+    connectedCallback() {
+
     }
 }

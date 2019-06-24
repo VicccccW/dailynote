@@ -1,8 +1,3 @@
-<!-- refresh apex issue -->
-
-<!-- create new lwc, have revert button and save button on footer -->
-
-
 <template>
    <!-- lightning button for open modal window -->
    <lightning-button variant="neutral"
@@ -13,6 +8,7 @@
 
    <!-- modal start -->        
    <template if:true={showModal}>
+
       <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
          <div class="slds-modal__container" onitemdrop={handleItemDrop}>
 
@@ -30,7 +26,7 @@
 
             <!-- modal body start -->
             <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
-               <c-worklog-draggable-modal-page></c-worklog-draggable-modal-page>
+               <c-worklog-draggable-modal-page record-id={recordId}></c-worklog-draggable-modal-page>
             </div>
 
             <!-- modal footer start-->

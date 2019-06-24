@@ -1,10 +1,12 @@
 /* eslint-disable no-console */
-import { LightningElement, track } from 'lwc';
+import { LightningElement, track, api } from 'lwc';
 //import { CurrentPageReference } from 'lightning/navigation';
 //import { registerListener, unregisterAllListeners } from 'c/pubsub';
 
 export default class WorklogDraggableModal extends LightningElement {
     @track showModal = false;
+
+    @api recordId;
 
     //@wire(CurrentPageReference) pageRef;
  

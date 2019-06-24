@@ -8,7 +8,7 @@
 
         $Lightning.use("c:draggableListAuraAppWrapper", function() {
             $Lightning.createComponent(
-                "c:worklogDraggableRelatedList",
+                "c:worklogDraggableLtnOutPage",
                 { prePageUrl : "/lightning/r/Account/{!$CurrentPage.parameters.id}/view",
                   accountId : "{!$CurrentPage.parameters.id}"
                 },

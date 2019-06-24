@@ -6,7 +6,7 @@
     <script>
         $Lightning.use("c:draggableDetailPageAuraAppWrapper", function() {
             $Lightning.createComponent(
-                "c:worklogDraggableDetailPage",
+                "c:worklogDraggableLtnOutPage",
                 { prePageUrl : "/lightning/r/Account/{!$CurrentPage.parameters.id}/view",
                   accountId : "{!$CurrentPage.parameters.id}"
                 },

@@ -47,6 +47,9 @@
             ],
             "c/worklogSearchBar": [
                 "worklogSearchBar/worklogSearchBar.js"
+            ],
+            "c/worklogDraggableLtnOutPage": [
+                "worklogDraggableLtnOutPage/worklogDraggableLtnOutPage.js"
             ]
         }
     },

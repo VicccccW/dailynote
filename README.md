@@ -8,6 +8,15 @@
 
 ## Issues
 
+### Profile issue
+> You may not modify the permission xxx while editing a Standard Profile
+
+> change the following to false if needed
+
+_CreateContentSpace
+_ViewFlowUsageAndFlowEventData
+_ViewUserPII
+
 ## Notes
 >"s1EncryptedStoragePref2": false
 

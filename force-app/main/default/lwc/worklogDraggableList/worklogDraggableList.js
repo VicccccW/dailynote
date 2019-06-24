@@ -1,13 +1,12 @@
 /* eslint-disable no-console */
 import { LightningElement, wire, track} from 'lwc';
-//import { refreshApex } from '@salesforce/apex';
+import { refreshApex } from '@salesforce/apex';
 import getAllWorklogs from '@salesforce/apex/WorklogController.getAllWorklogs';
 import saveWorklogs from '@salesforce/apex/WorklogController.saveWorklogs';
 import { CurrentPageReference } from 'lightning/navigation';
 import { fireEvent } from 'c/pubsub';
 import { reduceErrors } from 'c/idsUtils';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
-
 
 export default class WorklogDraggableList extends LightningElement {
     
@@ -19,16 +18,20 @@ export default class WorklogDraggableList extends LightningElement {
 
     @wire(CurrentPageReference) pageRef;
 
+    _wiredWorklogsResult;
+
     @wire(getAllWorklogs)
-    wiredWorklogs({ error, data }) {
-        if(data) {
-            this.worklogs = JSON.parse(JSON.stringify(data));
-            this._originalArr = JSON.parse(JSON.stringify(data));
+    wiredWorklogs(result) {
+        this._wiredWorklogsResult = result;
+
+        if(result.data) {
+            this.worklogs = JSON.parse(JSON.stringify(result.data));
+            this._originalArr = JSON.parse(JSON.stringify(result.data));
             //https://salesforce.stackexchange.com/questions/256761/uncaught-typeerror-set-on-proxy-trap-returned-falsish-for-property-name
             this.error = undefined;
-        } else if (error) {
+        } else if (result.error) {
             this.worklogs = undefined;
-            this.error = error;
+            this.error = result.error;
         }
     }
 
@@ -95,7 +98,6 @@ export default class WorklogDraggableList extends LightningElement {
         saveWorklogs({ savedWorklogsStr : savedWorklogsStr })
             .then(() => {
                 this._originalArr = this.worklogs;
-                //return refreshApex(this.wiredWorklogs);
 
                 //dispatch success message 
                 this.dispatchEvent(
@@ -105,6 +107,8 @@ export default class WorklogDraggableList extends LightningElement {
                         variant: 'success'
                     })
                 );
+
+                return refreshApex(this._wiredWorklogsResult);
             })
             .catch(error => {
                 this.error = error;

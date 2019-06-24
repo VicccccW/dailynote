@@ -13,9 +13,9 @@
 
 > change the following to false if needed
 
-_CreateContentSpace
-_ViewFlowUsageAndFlowEventData
-_ViewUserPII
+_CreateContentSpace_
+_ViewFlowUsageAndFlowEventData_
+_ViewUserPII_
 
 ## Notes
 >"s1EncryptedStoragePref2": false

@@ -1,10 +1,10 @@
 /* eslint-disable no-console */
-import { LightningElement, wire, track} from 'lwc';
+import { LightningElement, wire, track, api} from 'lwc';
 import { refreshApex } from '@salesforce/apex';
 import getAllWorklogs from '@salesforce/apex/WorklogController.getAllWorklogs';
 import saveWorklogs from '@salesforce/apex/WorklogController.saveWorklogs';
 import { CurrentPageReference } from 'lightning/navigation';
-import { fireEvent } from 'c/pubsub';
+//import { fireEvent } from 'c/pubsub';
 import { reduceErrors } from 'c/idsUtils';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
@@ -40,14 +40,6 @@ export default class WorklogDraggableModalPage extends LightningElement {
         const movedItem = this.worklogs.find((element, index) => index === event.detail.oldIndex);
 
         const remainingItems = this.worklogs.filter((element, index) => index !== event.detail.oldIndex);
-        
-        //console.log(remainingItems);
-        // const reorderedItems = [
-        //     ...remainingItems.slice(0, event.detail.newIndex),
-        //     movedItem,
-        //     ...remainingItems.slice(event.detail.newIndex)
-        // ];
-        //console.log("dragging " + event.detail.oldIndex + " to " + event.detail.newIndex);
 
         remainingItems.splice(event.detail.newIndex, 0, movedItem);
         
@@ -58,44 +50,36 @@ export default class WorklogDraggableModalPage extends LightningElement {
 
         //re-order new items based on new index
         remainingItems.sort((a, b) => {
-            return a.Drag_Table_Index__c - b.Drag_Table_Index__c
+            return a.Drag_Table_Index__c - b.Drag_Table_Index__c;
         });
 
         //update worklogs property
         this.worklogs = remainingItems;
 
-        //enable buttons 
-        this.template.querySelectorAll('button').forEach(element => {
-            element.removeAttribute("disabled");
+        // //enable buttons 
+        const evt = new CustomEvent('itemdrop', {
+            bubbles: true
         });
 
-        // const test = this.template.querySelectoryAll('.button');
-        // console.log(test);
+        this.dispatchEvent(evt)
     }
 
     handleSelect(event) {
-        fireEvent(this.pageRef, 'worklogSelected', event.target.worklog.Id);
+        //fireEvent(this.pageRef, 'worklogSelected', event.target.worklog.Id);
+        console.log("item selected");
     }
 
+    @api
     handleRevert(event) {
-        //disable button
-        this.template.querySelectorAll('button').forEach(element => {
-            element.setAttribute("disabled", null);
-        });
-
         this.worklogs = this._originalArr;
     }
 
-    handleSave(event) {  
-        //disable button
-        this.template.querySelectorAll('button').forEach(element => {
-            element.setAttribute("disabled", null);
-        });
-        
+    @api
+    handleSave(event) {        
         //save data to server
         const savedWorklogsStr = JSON.stringify(this.worklogs);
 
-        saveWorklogs({ savedWorklogsStr : savedWorklogsStr })
+        return saveWorklogs({ savedWorklogsStr : savedWorklogsStr })
             .then(() => {
                 this._originalArr = this.worklogs;
 
@@ -107,6 +91,7 @@ export default class WorklogDraggableModalPage extends LightningElement {
                         variant: 'success'
                     })
                 );
+                
 
                 return refreshApex(this._wiredWorklogsResult);
             })

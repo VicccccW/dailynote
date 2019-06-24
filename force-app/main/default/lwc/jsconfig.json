@@ -3,6 +3,9 @@
         "experimentalDecorators": true,
         "baseUrl": ".",
         "paths": {
+            "c/demoLwcforLighntingout": [
+                "demoLwcforLighntingout/demoLwcforLighntingout.js"
+            ],
             "c/idsUtils": [
                 "idsUtils/idsUtils.js"
             ],
@@ -15,11 +18,20 @@
             "c/worklogDetails": [
                 "worklogDetails/worklogDetails.js"
             ],
+            "c/worklogDraggableDetailPage": [
+                "worklogDraggableDetailPage/worklogDraggableDetailPage.js"
+            ],
             "c/worklogDraggableList": [
                 "worklogDraggableList/worklogDraggableList.js"
             ],
             "c/worklogDraggableListItemBubbling": [
                 "worklogDraggableListItemBubbling/worklogDraggableListItemBubbling.js"
+            ],
+            "c/worklogDraggableModal": [
+                "worklogDraggableModal/worklogDraggableModal.js"
+            ],
+            "c/worklogDraggableRelatedList": [
+                "worklogDraggableRelatedList/worklogDraggableRelatedList.js"
             ],
             "c/worklogForm": [
                 "worklogForm/worklogForm.js"
@@ -35,18 +47,6 @@
             ],
             "c/worklogSearchBar": [
                 "worklogSearchBar/worklogSearchBar.js"
-            ],
-            "c/demoLwcforLighntingout": [
-                "demoLwcforLighntingout/demoLwcforLighntingout.js"
-            ],
-            "c/worklogDraggableRelatedList": [
-                "worklogDraggableRelatedList/worklogDraggableRelatedList.js"
-            ],
-            "c/worklogDraggableDetailPage": [
-                "worklogDraggableDetailPage/worklogDraggableDetailPage.js"
-            ],
-            "c/worklogDraggableModal": [
-                "worklogDraggableModal/worklogDraggableModal.js"
             ]
         }
     },

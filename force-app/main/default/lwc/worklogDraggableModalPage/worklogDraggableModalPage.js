@@ -83,8 +83,6 @@ export default class WorklogDraggableModalPage extends LightningElement {
 
         return saveWorklogs({ savedWorklogsStr : savedWorklogsStr })
             .then(() => {
-                this._originalArr = this.worklogs;
-
                 //dispatch success message 
                 this.dispatchEvent(
                     new ShowToastEvent({
@@ -102,15 +100,11 @@ export default class WorklogDraggableModalPage extends LightningElement {
                 //dispatch error message
                 this.dispatchEvent(
                     new ShowToastEvent({
-                        title: 'Error creating record',
+                        title: 'Error updating record',
                         message: reduceErrors(error).join(', '),
                         variant: 'error'
                     })
                 );
             })
-    }
-
-    connectedCallback() {
-
     }
 }

@@ -24,7 +24,9 @@ export default class WorklogDraggableModal extends LightningElement {
 
     handleItemDrop() {
         this.template.querySelectorAll('button').forEach(element => {
-            element.removeAttribute("disabled");
+            if(element.name !== "Close") {
+                element.removeAttribute("disabled");
+            }
         });
     }
 
@@ -32,9 +34,7 @@ export default class WorklogDraggableModal extends LightningElement {
         //disable button
         this.template.querySelectorAll('button').forEach(element => {
             if(element.name !== "Close") {
-                if(element.name !== "Close") {
-                    element.setAttribute("disabled", null);
-                }
+                element.setAttribute("disabled", null);
             }
         });
 

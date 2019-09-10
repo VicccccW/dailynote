@@ -6,11 +6,12 @@
 ### Profile
 
 > You may not modify the permission xxx while editing a Standard Profile
+
 **change the following to false if needed**
 
-⋅⋅* _CreateContentSpace_
-⋅⋅* _ViewFlowUsageAndFlowEventData_
-⋅⋅* _ViewUserPII_
+* _CreateContentSpace_  
+* _ViewFlowUsageAndFlowEventData_  
+* _ViewUserPII_  
 
 ## Notes
 >"s1EncryptedStoragePref2": false

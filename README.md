@@ -8,7 +8,7 @@
 
 > You may not modify the permission xxx while editing a Standard Profile  
 
-change the following to false if needed
+toggle the following in Admin.profile to true/false if needed
 
 * _CreateContentSpace_  
 * _ViewFlowUsageAndFlowEventData_  
@@ -16,7 +16,7 @@ change the following to false if needed
 
 ## Notes
 
-> "s1EncryptedStoragePref2": false
+> "s1EncryptedStoragePref2": false  
 _disables Lightning Experience caching_  
 
 _Disabling secure and persistent browser caching has a significant negative performance impact on Lightning Experience. Always enable the setting in production orgs._

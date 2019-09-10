@@ -1,11 +1,14 @@
 # SFDX App
 
+## Component Structure
+
 ## Deployment Issue
 
 ### Profile Issue
 
 > You may not modify the permission xxx while editing a Standard Profile  
-**change the following to false if needed**
+
+change the following to false if needed
 
 * _CreateContentSpace_  
 * _ViewFlowUsageAndFlowEventData_  

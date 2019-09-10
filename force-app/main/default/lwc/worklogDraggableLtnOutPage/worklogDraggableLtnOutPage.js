@@ -11,7 +11,7 @@ export default class WorklogDraggableLtnOutPage extends LightningElement {
 
     @track error;
 
-    _originalArr;
+    _originalArr; // for revert
 
     @api prePageUrl;
 
@@ -87,7 +87,7 @@ export default class WorklogDraggableLtnOutPage extends LightningElement {
             .then(() => {
                 this._originalArr = this.worklogs;
 
-                //does not work ing vf -> aura -> lwc
+                //does not work in vf -> aura -> lwc
                 //dispatch success message 
                 this.dispatchEvent(
                     new ShowToastEvent({
@@ -100,7 +100,7 @@ export default class WorklogDraggableLtnOutPage extends LightningElement {
             .catch(error => {
                 this.error = error;
 
-                //does not work ing vf -> aura -> lwc
+                //does not work in vf -> aura -> lwc
                 //dispatch error message
                 this.dispatchEvent(
                     new ShowToastEvent({

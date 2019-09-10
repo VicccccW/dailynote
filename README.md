@@ -2,7 +2,9 @@
 
 ## Component Structure
 
-## Deployment Issue
+## Deployment Notes
+
+Deploy into a new scratch
 
 ### Profile Issue
 

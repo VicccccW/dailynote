@@ -12,7 +12,6 @@ export default class RecordFormCreate extends LightningElement {
 
     @wire(CurrentPageReference) pageRef;
 
-
     objectApiName = "Worklog__c";
 
     fields = [TYPE_FIELD, DATE_FIELD, SUMMARY_FIELD, DETAIL_FIELD];

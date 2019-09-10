@@ -68,9 +68,6 @@ export default class WorklogDraggableList extends LightningElement {
         this.template.querySelectorAll('button').forEach(element => {
             element.removeAttribute("disabled");
         });
-
-        // const test = this.template.querySelectoryAll('.button');
-        // console.log(test);
     }
 
     handleSelect(event) {

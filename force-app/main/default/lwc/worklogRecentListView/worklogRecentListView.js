@@ -6,15 +6,6 @@ export default class DailynoteLogRecentListView extends LightningElement {
     @track result;
     @track error;
 
-    // @wire(getListUi, { objectApiName: WORKLOG_OBJECT, listViewApiName: 'Recent_Worklog' })
-    // listView;
-    
-    // get worklogs() {
-    //     return this.listView.data.records.records;
-    // }
-
-
-
     @wire(getListUi, { objectApiName: WORKLOG_OBJECT, listViewApiName: 'Recent_Worklog' })
     wiredlistView({ error, data }) {
         if(data) {
@@ -23,6 +14,4 @@ export default class DailynoteLogRecentListView extends LightningElement {
             this.error = error;
         }
     }
-
-
 }

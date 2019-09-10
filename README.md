@@ -14,7 +14,7 @@
 ## Notes
 
 > "s1EncryptedStoragePref2": false
-_disables Lightning Experience caching_
+_disables Lightning Experience caching_  
 
 _Disabling secure and persistent browser caching has a significant negative performance impact on Lightning Experience. Always enable the setting in production orgs._
 
@@ -25,7 +25,9 @@ retrieve sample data from org
 
 assign permissionset  
 > sfdx force:user:permset:assign --permsetname Worklog_App_Permission  
-    or  
+
+or
+
 > sfdx force:user:permset:assign -n Worklog_App_Permission -u xxxOrg  
 
 import sample data to org  

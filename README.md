@@ -25,9 +25,7 @@ retrieve sample data from org
 
 assign permissionset  
 > sfdx force:user:permset:assign --permsetname Worklog_App_Permission  
-
-or  
-
+    or  
 > sfdx force:user:permset:assign -n Worklog_App_Permission -u xxxOrg  
 
 import sample data to org  
@@ -37,7 +35,7 @@ open the app directly
 > sfdx force:org:open -p lightning/page/home
 
 create a package in the Devhub, not the scratch org  
-    > sfdx force:package:create -n "Worklog App" -d "An app for you to log daily work" -r "force-app" -t Unlocked -v DevHubDailyNote
+> sfdx force`:package:`create -n "Worklog App" -d "An app for you to log daily work" -r "force-app" -t Unlocked -v DevHubDailyNote
 
 create package version  
 > sfdx force`:package:`version:create -p "Worklog App" -d force-app -k test1234 --wait 10 -v DevHubDailyNote

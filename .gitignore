@@ -8,6 +8,9 @@
 # Salesforce cache
 .sfdx/
 
+# LWC local server config
+.localdevserver
+
 # Logs
 logs
 *.log

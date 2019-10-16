@@ -18,9 +18,5 @@ export default class WorklogSearchBar extends LightningElement {
     handleKeyChange(event) {
         fireEvent(this.pageRef, 'searchKeyChange', event.target.value);
     }
-
-    // handleKeyChange(event) {
-    //     console.log("test");
-    // }
 }
 //https://rajvakati.com/2019/01/31/lightning-web-components-events/

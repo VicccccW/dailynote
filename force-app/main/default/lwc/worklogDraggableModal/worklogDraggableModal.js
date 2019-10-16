@@ -1,16 +1,11 @@
 /* eslint-disable no-console */
 import { LightningElement, track, api } from 'lwc';
-//import { CurrentPageReference } from 'lightning/navigation';
-//import { registerListener, unregisterAllListeners } from 'c/pubsub';
 
 export default class WorklogDraggableModal extends LightningElement {
     @track showModal = false;
 
     @api recordId;
-
-    //@wire(CurrentPageReference) pageRef;
  
-    /* javaScipt functions start */ 
     openModal() {    
         // to open modal window set 'showModal' tarck value as true
         this.showModal = true;
@@ -38,7 +33,8 @@ export default class WorklogDraggableModal extends LightningElement {
             }
         });
 
-        this.template.querySelector('c-worklog-draggable-modal-page').handleRevert();
+        this.template.querySelector('c-worklog-draggable-modal-page')
+        .handleRevert();
     }
 
     handleSave() {
@@ -52,21 +48,7 @@ export default class WorklogDraggableModal extends LightningElement {
         this.template.querySelector('c-worklog-draggable-modal-page')
         .handleSave()
         .then(() => this.closeModal());
-        
-        // // eslint-disable-next-line @lwc/lwc/no-async-operation
-        // setTimeout(() => {
-        //     this.showModal = false;
-        // }, 1000);
-        
     }
-
-    // connectedCallback() {
-
-    // }
-
-    // renderedCallback() {
-
-    // }
 }
 
 
